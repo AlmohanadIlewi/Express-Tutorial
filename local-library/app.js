@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 // MongoDB Atlas verbindung
 
-const mongodb = "mongodb+srv://mohanad.ilewi@docc.techstarter.de:<xxxxxx>@cluster0.f9jhrev.mongodb.net/local-libaray?retryWrites=true&w=majority"
+// const mongodb = "mongodb+srv://mohanad.ilewi@docc.techstarter.de:<xxxxxx>@cluster0.f9jhrev.mongodb.net/local-libaray?retryWrites=true&w=majority"
 
 var app = express();
 
@@ -45,6 +45,21 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 
+// Mongoose-Verbindung einrichten
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+
+// const mongoDB = "mongodb+srv://mohanad.ilewi@docc.techstarter.de:<AWS198351>@cluster0.f9jhrev.mongodb.net/local-libaray?retryWrites=true&w=majority";
+
+const mongoDB = 'mongodb+srv://<mohanadilewi>:<AWS198351>@cluster0.f9jhrev.mongodb.net/<local-library>?retryWrites=true&w=majority';
+
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
+
+
+/*
 // Importieren des Mongoose-Moduls ......
 const mongoose = require("mongoose");
 
@@ -60,4 +75,4 @@ const mongoDB = "mongodb://127.0.0.1/my_database";
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
-}
+} */
