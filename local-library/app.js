@@ -51,7 +51,7 @@ mongoose.set("strictQuery", false);
 
 // const mongoDB = "mongodb+srv://mohanad.ilewi@docc.techstarter.de:<AWS198351>@cluster0.f9jhrev.mongodb.net/local-libaray?retryWrites=true&w=majority";
 
-const mongoDB = 'mongodb+srv://<mohanadilewi>:<AWS198351>@cluster0.f9jhrev.mongodb.net/<local-library>?retryWrites=true&w=majority';
+const mongoDB = 'mongodb+srv://<mohanadilewi>:<xxxxxx>@cluster0.f9jhrev.mongodb.net/<local-library>?retryWrites=true&w=majority';
 
 main().catch((err) => console.log(err));
 async function main() {
